@@ -1,0 +1,919 @@
+ .cf:after,.cf:before {content: '';display: table;}
+.cf:after {clear: both;}
+.cf {zoom: 1;}
+
+@keyframes slidedown {
+    from{top:-80px;}
+    to{top: 0;}
+}
+
+@keyframes dbanim{
+   from { opacity: 0;}
+   to { opacity: 1;}
+}
+
+
+
+ @font-face {
+    font-family: "ProximaNovaBold";
+    src: url("fonts/ProximaNovaBold/ProximaNovaBold.eot");
+    src: url("fonts/ProximaNovaBold/ProximaNovaBold.eot?#iefix")format("embedded-opentype"),
+    url("fonts/ProximaNovaBold/ProximaNovaBold.woff") format("woff"),
+    url("fonts/ProximaNovaBold/ProximaNovaBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "AvenirHeavy";
+    src: url("fonts/Avenir_Heavy/Avenir_Heavy.eot");
+    src: url("fonts/Avenir_Heavy/Avenir_Heavy.eot?#iefix")format("embedded-opentype"),
+    url("fonts/Avenir_Heavy/Avenir_Heavy.woff") format("woff"),
+    url("fonts/Avenir_Heavy/Avenir_Heavy.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+@font-face {
+    font-family: "AvenirMedium";
+    src: url("fonts/Avenir_Medium/Avenir_Medium.eot");
+    src: url("fonts/Avenir_Medium/Avenir_Medium.eot?#iefix")format("embedded-opentype"),
+    url("fonts/Avenir_Medium/Avenir_Medium.woff") format("woff"),
+    url("fonts/Avenir_Medium/Avenir_Medium.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Museo700";
+    src: url("fonts/Museo700-Regular/Museo700-Regular.eot");
+    src: url("fonts/Museo700-Regular/Museo700-Regular.eot?#iefix")format("embedded-opentype"),
+    url("fonts/Museo700-Regular/Museo700-Regular.woff") format("woff"),
+    url("fonts/Museo700-Regular/Museo700-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "MuseoSans500";
+    src: url("fonts/MuseoSans_500/MuseoSans_500.eot");
+    src: url("fonts/MuseoSans_500/MuseoSans_500.eot?#iefix")format("embedded-opentype"),
+    url("fonts/MuseoSans_500/MuseoSans_500.woff") format("woff"),
+    url("fonts/MuseoSans_500/MuseoSans_500.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "ProximanovaSemibold";
+    src: url("fonts/Proximanova-semibold/Proximanova-semibold.eot");
+    src: url("fonts/Proximanova-semibold/Proximanova-semibold.eot?#iefix")format("embedded-opentype"),
+    url("fonts/Proximanova-semibold/Proximanova-semibold.woff") format("woff"),
+    url("fonts/Proximanova-semibold/Proximanova-semibold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+
+.owl-next, .owl-prev, .btn, ul li a, ul li, a, .owl-dot {
+ transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+       -webkit-transition: all 0.3s ease-in-out;
+  
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    max-width: 1440px;
+    height: 100%;
+    width: 100%;
+    overflow-x:hidden;
+}
+
+.bodymargin {
+    margin-top: 80px;
+}
+
+.mainWrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    font-size: 10pt;
+    line-height: 20px;
+}
+
+.sign-in-form {
+    padding: 20px;
+    background-color: rgba(0,0,0,0.4);
+    display: none;
+    text-align: center;
+
+}
+
+.sign-in-form input {
+    text-indent: 10px;
+    border: none;
+    margin-top: 10px;
+    font-size: 2em;
+    line-height: 2;
+}
+
+.sign-in-form input:focus {
+    outline: 1px solid #0ebfdd;
+    opacity: 1;
+}
+
+input[type="submit"] {
+    color:  #fff;
+    background-color: #0ebfdd;
+    opacity: 0.8;
+    text-indent: 0;
+    padding: 0 10%;
+    cursor: pointer;
+}
+
+input:hover {
+    opacity: 1;
+}
+
+.navWrapper{
+    width: 100%;
+    max-width: 1440px;
+    background: #f7fdfe;
+    height: auto;
+    padding: 0 150px;
+   
+}
+
+.nawWrapperFixed {
+    position: fixed;
+    z-index: 100;
+    top:0;
+    animation-name:slidedown;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+}
+
+nav {
+    text-transform: uppercase;
+}
+
+nav .logo  {
+    float: left;
+    font:  2.5em/2 'Museo700' ;
+    color: #82868f;
+    display: block;
+    cursor: pointer;
+}
+
+nav menu >* {display: block;}
+nav menu ul{
+    float: right;
+    position: relative;
+}
+
+nav .nav-but {
+    width: 20px;
+    height: 20px;
+    margin-top:6px;
+    background: url(../images/menu-alt-512.png) center center no-repeat;
+    display: none;
+    cursor: pointer;
+    float: left;
+}
+
+nav menu ul li{
+    float: right;
+}
+
+nav menu ul li a{
+    margin: 20px 18px;
+    font:  1em/2 'Museo700';
+    color: #82868f;
+    float: left;
+}
+
+nav menu ul li a:hover {
+    color: #65686f;
+}
+
+nav menu ul li.btn a {
+    margin-left: 25px;
+    padding: 0 38px;
+    color:  #fff;
+    background-color: #0ebfdd;
+    border-radius: 20px;
+}
+
+nav menu ul li:first-child a:hover {
+    background-color:#0fafca;
+}
+
+header .intro , .intro-mobile{
+    text-align: center;
+    vertical-align: top;
+    width: 100%;
+    max-height: 530px;
+    overflow: hidden;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+header h2 {
+    padding-top: 20%;
+    font: 3em/1.5 'AvenirHeavy';
+}
+
+header h2:before {
+    content: "";
+    background: url(../images/Stars.png) center center no-repeat;
+    width: 12px;
+    height: 30px;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+header h2:after {
+    content: "";
+    background: url(../images/Stars.png) center center no-repeat;
+    width: 12px;
+    height: 30px;
+    margin-left: 20px;
+    display: inline-block;
+}
+
+header  p {
+    width: 65%;
+    margin: 0 auto;
+    font: 1.5em 'AvenirMedium';
+    padding-top: 32px;
+}
+
+#about h2 {
+    padding-top: 70px ;
+    font: 3em/2.6 'AvenirHeavy';
+    color: #0ebfdd ;
+    text-align: center;
+}
+
+#about p {
+    width: 70%;
+    margin: 0 auto;
+    padding-bottom: 70px ;
+    font: 1.5em 'AvenirMedium';
+    padding-top: 32px;
+    text-align: center;
+    color: #45494d;
+}
+
+#team {
+    background-color: #0ebfdd;
+    padding-bottom: 64px;
+    padding-top: 70px;
+}
+#team h2 {
+    padding-bottom: 100px;
+    font: 3em/2.6 'AvenirHeavy';
+    color: #fff;
+    text-align: center;
+}
+
+#team ul {
+    text-align: center;
+    padding-bottom: 105px;
+}
+
+#team ul li {
+    vertical-align: top;
+    display: inline-block;
+    font-size: 1.4em;
+    line-height: 0.9;
+    color: #fff;
+    margin: 0 35px;
+}
+
+#team ul li img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+#team ul li img:hover {
+    border: 3px solid #2c94aa;
+    transition-duration:0s;
+        -moz-transition-duration:0s;
+           -webkit-transition-duration:0s;
+}
+
+#team ul li h3 {
+    margin-top: 15px;
+    font-family: 'AvenirHeavy';
+}
+
+#team ul li p {
+    font-family: 'AvenirHeavy';
+    font-style: italic;
+}
+
+#team .btn{
+    width: 180px;
+    height: 40px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    margin: 0 auto;
+    text-transform: uppercase;
+    font: 1em/3 'Museo700';
+    color: #fff;
+    text-align: center;
+}
+
+#team .btn:hover {
+    color: #dddfdf;
+    border-color: #dddfdf;
+    cursor: pointer;
+}
+
+#mapWrapper{
+   height: 600px;
+    background: url(../images/bg_map.jpg) center center no-repeat;
+        background-size: cover !important;
+        -moz-background-size: cover !important;
+        -webkit-background-size: cover !important;   
+}
+
+#mapWrapper {
+   position: relative;
+}
+
+#mapWrapper .pin{
+    position: absolute;
+    width: 28px;
+    height: 36px;
+    background: url(../images/pin_1.png) center center no-repeat;
+    top: 25%;
+    left: 50%;
+    cursor: pointer;
+        background-size: cover !important;
+        -moz-background-size: cover !important;
+        -webkit-background-size: cover !important;   
+}
+
+#mapWrapper .pinpos2{
+    top: 69%;
+    left: 36%;
+}
+
+#mapWrapper .pinpos3{
+    background: url(../images/pin-2.png) center center no-repeat;
+    left: 30%;
+    top: 45%;
+    
+}
+
+#mapWrapper .pin .db{
+    position: absolute;
+    display: none;
+    width: 168px;
+    height: 81px;
+    background: url(../images/db_bg.png) center center no-repeat;
+    top: -86px;
+    left: -10px;
+    animation-name: dbanim;
+    animation-duration: 1s;
+}
+
+#mapWrapper .pin:hover .db{
+    display: block;
+    padding: 10px 15px;
+    
+}
+#mapWrapper .pin .db h3{
+    font-size: 1.4em;
+    color: #fff;
+    font-weight: bold;
+    line-height: 1;
+}
+#mapWrapper .pin .db p{
+    font-size: 1.2em;
+    color: #888e95;
+
+}
+
+footer { 
+    background-color: #45494d;
+}
+
+#footer {
+    padding: 0 10%; 
+}
+
+#footernav {
+    border-bottom: 1px solid #5a5e62;
+    padding: 20px 0;
+}
+
+#footernav ul {
+    float: left;
+}
+
+#footernav ul li{
+    float: left;
+}
+
+#footernav ul li a{
+    margin-right: 30px;
+    color: #73767a;
+    font: 1em/3 'MuseoSans500';
+    text-transform: uppercase;
+}
+
+#footernav ul li a:hover {
+    color: #d7dee4;
+}
+
+#footernav .icons {
+    float: right;
+}
+
+#footernav .icons ul li .icon{
+    background: url(../images/message.png) center center no-repeat;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #fff;
+    opacity: 0.4;
+    border-radius: 50%;
+    display: block;
+}
+
+#footernav .icons ul li .icon:hover {
+    opacity: 1;
+    border-width: 1px;
+    transition-duration:0s;
+        -moz-transition-duration:0s;
+           -webkit-transition-duration:0s;
+         
+}
+
+#footernav .icons ul li:last-child a{
+    margin-right: 0;
+
+}
+
+#footernav .icons ul li .bk2 {
+       background: url(../images/facebook.png) center center no-repeat;
+}
+
+#footernav .icons ul li .bk3 {
+       background: url(../images/tweeter.png) center center no-repeat;
+}
+
+#copiright nav {
+    float: right;
+}
+
+#copiright nav a{
+    text-transform: capitalize;
+    color: #73767a;
+    float: right;
+    font: 1em/3.2 'MuseoSans500';
+    margin: 0 14px;
+}
+
+#copiright nav a:hover {
+    color: #d7dee4;
+}
+
+#copiright nav a:first-child {
+    margin-right: 0;
+}
+
+.owl-dots {
+    width: 100%;
+    height: 18px;
+    position: absolute;
+    bottom: 14px;
+    left: 0;
+    text-align: center;
+}
+
+
+.owl-dot {
+    width: 18px;
+    height: 18px;
+    margin-bottom: 14px;
+    margin-right: 6px;
+    border-radius: 50%;
+    background-color: #ccc;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+}
+
+.active {
+    width: 18px;
+    height: 18px ;
+    border: 2px solid #bbb ;
+    background: none ;
+}
+
+.intro-mobile{
+    background: url(../images/Layer-78.png) center center no-repeat;
+    width: 100%;
+    height: 600px ;
+      background-size: cover !important;
+        -moz-background-size: cover !important;
+        -webkit-background-size: cover !important;
+    display: none;
+} 
+
+.owl-item, .intro-mobile {
+    position: relative ;
+    width: 100%;
+    height: 600px ;
+      background-size: cover !important;
+        -moz-background-size: cover !important;
+        -webkit-background-size: cover !important;
+}
+
+
+.owl-prev {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    width: 50px;
+    height: 65px;
+    background: url(../images/arrow_left.png) center center no-repeat ;
+    opacity: 0.1;
+      background-size: cover !important;
+        -moz-background-size: cover !important;
+        -webkit-background-size: cover !important;
+}
+
+.owl-next {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    width: 50px;
+    height: 65px;
+    background: url(../images/arrow_right.png) center center no-repeat;
+    opacity: 0.1;
+      background-size: cover !important;
+        -moz-background-size: cover !important;
+        -webkit-background-size: cover !important;
+}
+
+.owl-prev:hover {
+    opacity: 0.4;
+}
+.owl-next:hover {
+    opacity: 0.4;
+}
+
+
+
+
+
+/* ---------- media for 1 smaller screen ----------*/
+
+@media (max-width:1024px){
+
+
+
+body {
+    max-width: 1024px;
+}
+
+.bodymargin {
+    margin-top: 60px;
+}
+
+.mainWrapper {
+    font-size: 8pt;
+    line-height: 15px;
+}
+
+.navWrapper{
+    max-width: 1024px;
+    padding: 0 10%;
+}
+
+nav .logo  {
+    margin-left: 10px;
+}
+
+nav menu ul li a{
+    margin: 15px 18px;
+}
+
+nav menu ul li.btn a {
+    margin-left: 22px;
+    padding: 0 32px;
+    border-radius: 20px;
+}
+
+.owl-item {
+    max-width: 1024px !important;
+}
+
+.owl-height {
+    height: 427px !important;
+}
+
+
+.owl-prev {
+    width: 30px ;
+    height: 39px ;
+}
+
+.owl-next {
+    width: 30px;
+    height: 39px ;
+}
+
+header h2:before {
+    width: 12px;
+    height: 25px;
+    margin-right: 15px;
+}
+
+header h2:after {
+    width: 12px;
+    height: 15px;
+    margin-left: 15px;   
+}
+
+header p {
+    width: 80%;
+    padding-top: 32px;
+}
+
+#about h2 {
+    padding-top: 60px ;
+}
+
+#about p {
+    width: 80%;
+    padding-bottom: 50px ;
+    padding-top: 28px;
+}
+
+#team {
+    padding-bottom: 55px;
+    padding-top: 50px;
+}
+
+#team h2 {
+    padding-bottom: 80px;
+}
+
+#team ul {
+    padding-bottom: 75px;
+}
+
+#team ul li {
+    margin: 0 28px;
+}
+
+#team ul li img {
+    width: 130px;
+    height: 130px;
+}
+
+#team ul li h3 {
+    margin-top: 12px;
+}
+
+#team .btn{
+    width: 160px;
+    height: 35px;
+}
+
+#mapWrapper{
+    height: 533px;
+}
+
+
+#mapWrapper .pin .db{
+    width: 145px;
+    height: 70px;
+    top: -82px;
+    left: -12px;
+}
+
+#mapWrapper .pin:hover .db{
+    padding: 8px 16px;
+}
+
+#footernav {
+    padding: 16px 0;
+}
+
+#footernav ul li a{
+    margin-right: 25px;
+}
+
+#footernav .icons ul li .icon{
+    width: 32px;
+    height: 32px;
+}
+}
+
+
+
+
+/* ---------- ~Mobile ----------*/
+
+@media (max-width:768px){
+
+body {
+    max-width: 768px;
+}
+
+header .owl-carousel {
+    display: none !important;
+    }
+
+.bodymargin {
+    margin-top: 30px;
+}
+
+.mainWrapper {
+    font-size: 5pt;
+    line-height: 30px;
+}
+
+.navWrapper{
+    max-width: 768px;
+}
+
+nav .logo  {
+    margin-left: 10px;
+    float: right;
+}
+
+nav menu ul{
+    display: none;
+  float: none;
+}
+
+.visible {
+    display: block;
+}
+
+nav menu {
+    float: left;
+}
+
+nav menu ul li{
+    display: block;
+    float: none;
+}
+
+nav menu ul li a{
+    margin: 5px;
+}
+
+nav menu ul li:first-child a {
+    margin-left: 0;
+}
+
+nav .nav-but {
+    display: block;
+    float: none;
+}
+
+nav menu ul li.btn a {
+    padding: 0 10px;
+    border-radius: 10px;
+}
+
+.intro-mobile {
+    display: block;
+    max-width: 100% !important;
+    min-height: 320px;
+    height: auto !important;
+}
+
+
+.owl-item, .intro-mobile {
+    max-width: 768px !important;
+}
+
+.owl-height {
+    height: 320px !important;
+}
+
+.owl-prev {
+    width: 30px ;
+    height: 39px ;
+}
+
+.owl-next {
+    width: 30px;
+    height: 39px ;
+}
+
+header .intro h2 {
+    padding-top: 150px;
+}
+
+header .intro h2:before {
+    width: 12px;
+    height: 15px;
+    margin-right: 5px;
+}
+
+header .intro h2:after {
+    width: 12px;
+    height: 15px;
+    margin-left: 5px;   
+}
+
+header .intro p {
+    width: 50%;
+    padding-top: 32px;
+}
+
+#about h2 {
+    padding-top: 50px ;
+}
+
+#about p {
+    padding-bottom: 60px ;
+    padding-top: 28px;
+}
+
+#team {
+    padding-bottom: 55px;
+    padding-top: 60px;
+}
+
+#team h2 {
+    padding-bottom: 50px;
+}
+
+#team ul {
+    padding-bottom: 45px;
+}
+
+#team ul li {
+    display: block;
+    padding-bottom: 30px;
+}
+
+#team ul li h3 {
+    margin-top: 12px;
+}
+
+#team .btn{
+    width: 100px;
+    height: 24px;
+    border-radius: 18px;
+}
+
+#mapWrapper{
+    height: 320px;
+}
+
+#mapWrapper .pin .db{
+    width: 80px;
+    height: 45px;
+    top: -52px;
+    left: 0;
+    line-height: 1.4;
+}
+
+#mapWrapper .pin:hover .db{
+    padding: 4px 6px;
+}
+
+#footernav {
+    padding: 16px 0;
+}
+
+#footernav ul li a{
+    margin-right: 25px;
+}
+
+#footernav .icons ul li .icon{
+    width: 32px;
+    height: 32px;
+}
+
+#copiright {
+   margin: 16px 0;
+}
+
+}
