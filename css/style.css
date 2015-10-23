@@ -126,6 +126,7 @@ body {
     margin-top: 10px;
     font-size: 2em;
     line-height: 2;
+    text-overflow:ellipsis;
 }
 
 .sign-in-form input:focus {
